@@ -1,0 +1,10 @@
+# Pycharm project folder
+.idea/
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+.env
