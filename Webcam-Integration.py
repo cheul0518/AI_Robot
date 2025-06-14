@@ -11,7 +11,7 @@ if not cap.isOpened():                          # check if the camera opened suc
 
 while True:
     success, img = cap.read()                   # Capture frame by frame
-                                                # success is True if the frame was read successfully
+                                                # success is true if the frame was read successfully
                                                 # img is the actual image (frame) data
 
     if not success:                             # exit if success is False
