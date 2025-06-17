@@ -21,7 +21,7 @@ while True:
     success, img = cap.read()
 
     if not success:
-        print("Failed to grab frame.")
+        print('Failed to grab frame.')
         break
 
     img, bboxs = detector.findFaces(img)                    # automatically draws a rectangle around each detected face on the img it returns
@@ -36,10 +36,10 @@ while True:
         # print(resultY)
 
         # Draw the PID information on the image
-        img = xPID.draw(img, [cx,cy])                  # Draws a line at the target position(320), and a line from the current position to the target
+        img = xPID.draw(img, [cx,cy])                  # Draws a vertical line at the target position(320), and another line from the current position to the target
         # img = yPID.draw(img, [cx, cy])
 
-    cv2.imshow("Image", img)
+    cv2.imshow('Image', img)
 
     # Exit on pressing 'q'
     if cv2.waitKey(1) & 0xFF == ord('q'):

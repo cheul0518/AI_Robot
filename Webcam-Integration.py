@@ -6,7 +6,7 @@ cap.set(3, 640)                     # 3: width  640 pixels
 cap.set(4, 480)                     # 4: height 480 pixels
 
 if not cap.isOpened():                          # check if the camera opened successfully
-    print("Cannot open camera")
+    print('Cannot open camera')
     exit()
 
 while True:
@@ -15,10 +15,10 @@ while True:
                                                 # img is the actual image (frame) data
 
     if not success:                             # exit if success is False
-        print("Failed to grab frame.")
+        print('Failed to grab frame.')
         break
 
-    cv2.imshow("Image", img)            # Display the resulting frame in a window titled "Image"
+    cv2.imshow('Image', img)            # Display the resulting frame in a window titled "Image"
                                                 # Updates on every loop cycle to create a live video
 
     if cv2.waitKey(1) & 0xFF == ord('q'):       # cv2.waitkey(1) waits 1 millisecond for a key press

@@ -14,7 +14,7 @@ while True:
                                                                 # img is the actual image (frame) data
 
     if not success:                                             # exit if success is false
-        print("Failed to grab frame.")
+        print('Failed to grab frame.')
         break
 
     img, bboxs = detector.findFaces(img)                        # findFaces returns "the image with annotations (like rectangles)", and "a list of bounding boxes" where faces are found.
@@ -25,10 +25,10 @@ while True:
             # Stylized rectangle
             cvzone.cornerRect(img,(x,y,w,h),l=10)          # img: the current image, (x,y,w,h): bouding box, l= length of the corner lines
     else:
-        print("No face detected")
+        print('No face detected')
 
     # Display the video feed
-    cv2.imshow("Face Detection", img)
+    cv2.imshow('Face Detection', img)
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
