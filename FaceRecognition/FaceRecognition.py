@@ -25,17 +25,17 @@ def play_audio(audio_source):
     (e.g., from text-to-speech APIs) and file path to an .mp3 file.
     :param audio_source: binary audio content or a file path to an .mp3 file
     '''
-    pygame.mixer.init()
+    pygame.mixer.init()                                             # Initializes the pygame.mixer, which handels audio playback.
 
-    if isinstance(audio_source, bytes): # Binary audio content
-        audio_stream = io.BytesIO(audio_source)
-        pygame.mixer.music.load(audio_stream)
-    elif isinstance(audio_source, str): # File path
+    if isinstance(audio_source, bytes):                             # Checks if audio_source is a bytes object (i.e., raw audio data_ not a file path).
+        audio_stream = io.BytesIO(audio_source)                     # Wraps the binary audio content in a Bytes IO object to make it act like a file-like stream (so pygame can load it)
+        pygame.mixer.music.load(audio_stream)                       # Loads the audio from the BytesIO stream into pygame's music player
+    elif isinstance(audio_source, str):                             # File path
         pygame.mixer.music.load(audio_source)
 
     pygame.mixer.music.play()
-    while pygame.mixer.music.get_busy():
-        pygame.time.Clock().tick(10)
+    while pygame.mixer.music.get_busy():                            # Enters a loop that continues as long as the music is still playing
+        pygame.time.Clock().tick(10)                                # Limits the loop to run at most 10 times per second (i.e., every 100ms). Very similar to time.sleep(0.1)
 
 def main():
     print('Loading Encode File ...')

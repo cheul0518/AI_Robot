@@ -30,6 +30,7 @@ if not cap.isOpened():                                                          
 detector = FaceDetector(minDetectionCon=0.6)                                    # Initializes a face detector that filters out weak directions
 xPID = PID([0.03, 0, 0.06], 640//2, axis=0)                              # P: 0.03, I: 0, D: 0.06, 640//2: Target x-position, axis=0: x axis
                                                                                 # Returns a value that tells how far and in which direction the current face is from the center.
+                                                                                # Logitech webcam: 640 * 480,  iMacCam: 1920 * 1080
 
 """ Arduino component - to be replaced by a Raspberry Pi in future implementations.
 # Initialize the starting angle of a servo motor.
