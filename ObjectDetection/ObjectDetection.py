@@ -28,7 +28,7 @@ def play_audio(audio_source):
 
     if isinstance(audio_source, bytes):
         audio_stream = io.BytesIO(audio_source)
-        pygame.mixer.music.load(audio_source)
+        pygame.mixer.music.load(audio_stream)
     elif isinstance(audio_source, str):
         pygame.mixer.music.load(audio_source)
 
@@ -85,8 +85,8 @@ while True:
             class_name = model.names[cls]
             confidence = box.conf[0]
 
-            # Check if detected class is in the target classes and confidence is above 0.3
-            if class_name.lower() in target_classes and confidence > 0.3:
+            # Check if detected class is in the target classes and confidence is above 0.4
+            if class_name.lower() in target_classes and confidence > 0.4:
                 # Get bounding box coordinates
                 x1, y1, x2, y2 = map(int, box.xyxy[0])
                 '''box.xyxy: a Pytorch tensor containing the bounding box coordinates of the detected object: [x1, y1, x2, y2]
